@@ -177,7 +177,7 @@
         };
         Utils.confirm(op);
     })
-    $("#submitForm .box table tbody").on('click','.del_field',function(){
+    $("#submitForm").on('click','.del_field',function(){
         var obj = this;
         var op = {
             title:'删除操作',
