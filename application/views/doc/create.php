@@ -472,10 +472,10 @@
         $.each(obj,function(n,v){
 
             var v_type = typeof v;
-            if(v_type == 'object' && !isNaN(v.length)){
+            if(v && v_type == 'object' && Array.isArray(v)){
                 groups.push(v[0]);
                 groups_name.push(n);
-            }else if(v_type == 'object' && isNaN(v.length)){
+            }else if(v && v_type == 'object'){
                 groups.push(v);
                 groups_name.push(n);
             }
@@ -521,10 +521,10 @@
         $.each(obj,function(n,v){
 
             var v_type = typeof v;
-            if(v_type == 'object' && !isNaN(v.length)){
+            if(v && v_type == 'object' && Array.isArray(v)){
                 groups.push(v[0]);
                 groups_name.push(n);
-            }else if(v_type == 'object' && isNaN(v.length)){
+            }else if(v && v_type == 'object'){
                 groups.push(v);
                 groups_name.push(n);
             }
