@@ -41,12 +41,11 @@ class Api_model extends CI_Model{
 
     public function edit($id, $post)
     {
-        $field = lwCheckValue($post, ['admin_id', 'group', 'name', 'link','method','descript']);
-        if ($field === false) {
-            return false;
-        }
-
         if ($id == 0) {
+            $field = lwCheckValue($post, ['admin_id', 'group', 'name', 'link','method','descript']);
+            if ($field === false) {
+                return false;
+            }
             $field['ctime'] = date("Y-m-d H:i:s");
             $result = $this->{static::$tb_name}->insert($field);
         } else {

@@ -54,7 +54,7 @@ class Doc extends AuthController {
             $requestParam = $post['requestParam'];
             $responseParam = $post['responseParam'];
             $err_code = $post['err_code'];
-            $this->api_model->edit($id,$apiDataInfo);
+            $this->api_model->edit(intval($id),$apiDataInfo);
             $this->apiRequestParams_model->delByApiId($id);
             $this->apiReturnParams_model->delByApiId($id);
             $this->apiErr_model->delByApiId($id);
