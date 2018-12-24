@@ -49,7 +49,7 @@ class Api_model extends CI_Model{
             $field['ctime'] = date("Y-m-d H:i:s");
             $result = $this->{static::$tb_name}->insert($field);
         } else {
-            $result = $this->{static::$tb_name}->update($field, ['id' => $id]);
+            $result = $this->{static::$tb_name}->update($post, ['id' => $id]);
         }
         return $result;
     }
